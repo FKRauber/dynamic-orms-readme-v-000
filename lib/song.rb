@@ -18,7 +18,7 @@ class Song
     table_info.each do |column|
       column_names << column["name"]
     end
-    column_names.compact
+    column_names.compact                  # removes any nil values
   end
 
   self.column_names.each do |col_name|
