@@ -18,10 +18,10 @@ class Song
     table_info.each do |column|
       column_names << column["name"]
     end
-    column_names.compact                  # removes any nil values
+    column_names.compact                    # removes any nil values
   end
 
-  self.column_names.each do |col_name|
+  self.column_names.each do |col_name|      # iterates over column names and sets an attr_accessor for each one as a symbol** 
     attr_accessor col_name.to_sym
   end
 
