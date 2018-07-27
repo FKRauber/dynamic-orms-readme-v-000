@@ -21,7 +21,7 @@ class Song
     column_names.compact                    # removes any nil values
   end
 
-  self.column_names.each do |col_name|      # iterates over column names and sets an attr_accessor for each one as a symbol** 
+  self.column_names.each do |col_name|      # iterates over column names and sets an attr_accessor for each one as a symbol**
     attr_accessor col_name.to_sym
   end
 
@@ -54,7 +54,7 @@ class Song
   end
 
   def self.find_by_name(name)
-    sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE name = #{name}"
     DB[:conn].execute(sql)
   end
 
